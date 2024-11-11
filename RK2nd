@@ -1,0 +1,23 @@
+%Runge Kutta 2nd Order Method
+clc;
+clear all;
+close all;
+f=input('\nEnter the function (dy/dx)= ');
+x0=input('\nEnter the initial value x0= ');
+y0=input('\nEnter the initial value y0= ');
+h=input('\nEnter the step size h= ');
+xg=input('\nEnter the final value xg= ');
+n=(xg-x0)/h;
+for i=1:n
+ k1=h*f(x0,y0);
+ k2=h*f(x0+h,y0+k1);
+ k=(k1+k2)/2;
+ yg=y0+k;
+ x0=x0+h;
+ y0=yg;
+ fprintf('\nyg=%f ',yg);
+end
+
+
+[x,y]=ode45(f,[0:0.2:0.4],0)
+

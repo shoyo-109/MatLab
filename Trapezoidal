@@ -1,0 +1,19 @@
+%Trapezoidal rule
+clc;
+clear all;
+close all;
+f=input('Enter the function= ');
+x0=input('Enter the initial value of limit= ');
+xn=input('Enter the final value of limit= ');
+n=input('Enter the subinterval= ');
+h=(xn-x0)/n;
+area=0;
+for i=1:(n-1)
+ area=area+f(x0+i*h);
+end
+ area1=f(x0)+f(xn);
+ ans=h/2*(area1+2*(area));
+ fprintf('\nA=%f',ans);
+
+
+quadv(f,0,3)

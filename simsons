@@ -1,0 +1,29 @@
+%Simpson 1/3
+clc;
+clear all;
+close all;
+f=input('Enter the function= ');
+x0=input('Enter the initial value of limit= ');
+xn=input('Enter the final value of limit= ');
+n=input('Enter the subinterval= ');
+h=(xn-x0)/n;
+if rem(n,2)==1
+ fprintf('Enter valid n');
+ n=input('\nEnter n as even number');
+end
+so=0;
+se=0;
+for k=1:1:n-1
+ x(k)=x0+k*h;
+ y(k)=f(x(k));
+ if rem(k,2)==1
+ so=so+y(k);
+ else
+ se=se+y(k);
+ end
+end
+ans=(h/3)*((f(x0)+f(xn))+4*so+2*se);
+fprintf("\nThe value of integration is %f",ans);
+
+
+quadv(f,1,3)

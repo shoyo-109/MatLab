@@ -1,0 +1,21 @@
+%Bisection
+clc;
+clear all;
+close all;
+f=input('enter the given function f(x)');
+x1=input('enter the given function x1');
+x2=input('enter the given function x2');
+n=input('enter the number of iteration');
+while f(x1)*f(x2)>0
+ x1=input('enter the first guess x1 again');
+ x2=input('enter the second guess x2 again');
+end
+for i=1:n
+ x3=(x1+x2)/2;
+ if f(x1)*f(x3)>0
+ x1=x3;
+ else
+ x2=x3;
+ end
+ fprintf('\nthe root of given equation is x3:%f',x3);
+ end

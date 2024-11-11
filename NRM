@@ -1,0 +1,17 @@
+%Newton-raphson method
+clc;
+clear all;
+close all;
+f=input('enter the given function f(x)');
+df=input('enter the given function df(x)');
+ddf=input('enter the function ddf(x)');
+x1=input('enter the first initial guess x1');
+n=input('enter the number of iteration');
+while (f(x1)*ddf(x1)/(df(x1))^2)>1
+ x1=input('enter the first guess x1 again');
+end
+for i=1:n
+ x2=x1-f(x1)/df(x1);
+ x1=x2
+ fprintf('\nthe root of given equation is x2:%f',x2);
+ end
